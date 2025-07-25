@@ -92,7 +92,7 @@
                 "template": {
                   "name": "Quote",
                   "model": "quote",
-                  "key-value": true,
+                  "quote_metadata": {},
                   "title": "<p>Think, McFly! Think!</p>",
                   "quote_title": "<p>Think, McFly! Think!</p>",
                   "quote_author": "Biff Tannen",

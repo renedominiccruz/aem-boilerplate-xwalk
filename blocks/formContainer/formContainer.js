@@ -1,6 +1,4 @@
 export default function decorate(block) {
-    console.log('RAW Block HTML:', block.innerHTML);
-  console.log('Children nodes:', block.children);
   const paragraphs = block.querySelectorAll('p');
 
   if (paragraphs.length > 0) {

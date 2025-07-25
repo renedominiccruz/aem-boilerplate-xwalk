@@ -5,7 +5,14 @@
       {
         "component": "richtext",
         "valueType": "string",
-        "name": "quote",
+        "name": "title",
+        "value": "",
+        "label": "Quote Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "quote_title",
         "value": "",
         "label": "Quote"
       },

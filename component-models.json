@@ -28,7 +28,7 @@
           "label": "Name",
           "name": "name",
           "valueType": "string"
-        }
+        },
         {
           "component": "text",
           "label": "Name2",

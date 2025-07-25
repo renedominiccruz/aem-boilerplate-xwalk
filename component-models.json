@@ -1,35 +1,5 @@
 [
   {
-    "id": "quote",
-    "fields": [
-      {
-      "component": "container",
-      "label": "Input fields",
-      "name": "inputfields",
-      "valueType": "string",
-      "collapsible": true,
-      "fields": [
-        {
-          "component": "select",
-          "label": "Type",
-          "name": "inputfields_type",
-          "valueType": "string",
-          "options": [
-            { "name": "text", "value": "text" },
-            { "name": "number", "value": "number" }
-          ]
-        },
-        {
-          "component": "text",
-          "label": "Name",
-          "name": "inputfields_name",
-          "valueType": "string"
-        }
-      ]
-      }
-    ]
-  },
-  {
     "id": "page-metadata",
     "fields": [
       {
@@ -188,14 +158,6 @@
         "label": "Text",
         "valueType": "string"
       }
-      ,
-      {
-        "component": "richtext",
-        "name": "subtitle",
-        "value": "",
-        "label": "Subtitle",
-        "valueType": "string"
-      }
     ]
   },
   {
@@ -214,6 +176,25 @@
         "name": "rows",
         "value": "",
         "label": "Rows"
+      }
+    ]
+  },
+  {
+    "id": "card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
       }
     ]
   },

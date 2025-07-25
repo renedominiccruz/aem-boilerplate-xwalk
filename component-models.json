@@ -24,15 +24,19 @@
       "collapsible": true,
       "fields": [
         {
-          "component": "text",
-          "label": "Name",
-          "name": "name",
-          "valueType": "string"
+          "component": "select",
+          "label": "Type",
+          "name": "type",
+          "valueType": "string",
+          "options": [
+            { "name": "text", "value": "text" },
+            { "name": "number", "value": "number" }
+          ]
         },
         {
           "component": "text",
-          "label": "Name2",
-          "name": "name2",
+          "label": "Name",
+          "name": "name",
           "valueType": "string"
         }
       ]

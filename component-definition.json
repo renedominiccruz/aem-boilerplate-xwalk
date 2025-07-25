@@ -95,7 +95,11 @@
                   "title": "<p>Think, McFly! Think!</p>",
                   "quote_title": "<p>Think, McFly! Think!</p>",
                   "quote_author": "Biff Tannen",
-                  "quote_subtitle": "Back to the Future"
+                  "quote_subtitle": "Back to the Future",
+                  "metadata": {
+                    "category": "Movies",
+                    "source": "Back to the Future"
+                  }
                 }
               }
             }

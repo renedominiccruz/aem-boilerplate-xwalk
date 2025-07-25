@@ -1,24 +1,31 @@
 export default function decorate(block) {
-  const paragraphs = block.querySelectorAll('p');
+    console.log('RAW Block HTML:', block.innerHTML);
+  console.log('Children nodes:', block.children);
+   const rows = block.querySelectorAll('div > div');
 
-  if (paragraphs.length > 0) {
-    // Remove the first <p> (the one with 'text')
-    paragraphs[0].remove();
-  }
+  rows.forEach((row) => {
+    const paragraphs = row.querySelectorAll('p');
 
-  if (paragraphs.length > 1) {
-    // Convert the second <p> into input
-    const addressP = paragraphs[1] || block.querySelector('p');
+    if (paragraphs.length >= 2) {
+      // Convert first <p> into a <label>
+      const labelText = paragraphs[0].textContent.trim();
+      const label = document.createElement('label');
+      label.textContent = labelText;
 
-    const input = document.createElement('input');
-    input.type = 'text';
-    input.name = 'address';
-    input.placeholder = 'Enter address';
+      // Convert second <p> into an <input>
+      const fieldName = paragraphs[1].textContent.trim().toLowerCase().replace(/\s+/g, '-');
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.name = fieldName;
+      input.placeholder = `Enter ${paragraphs[1].textContent.trim()}`;
 
-    // Add Universal Editor binding (if needed)
-    input.setAttribute('data-aue-prop', 'address');
-    input.setAttribute('data-aue-type', 'text');
+      // Bind to Universal Editor
+      input.setAttribute('data-aue-prop', fieldName);
+      input.setAttribute('data-aue-type', 'text');
 
-    addressP.replaceWith(input);
-  }
+      // Replace the first and second paragraphs
+      paragraphs[0].replaceWith(label);
+      paragraphs[1].replaceWith(input);
+    }
+  });
 }

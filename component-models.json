@@ -1,6 +1,6 @@
 [
   {
-    "id": "formContainer",
+    "id": "inputfields",
     "fields": [
       {
       "component": "container",
@@ -26,33 +26,6 @@
           "valueType": "string"
         }
       ]
-      }
-    ]
-  },
-  {
-    "id": "inputfields",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      }
-      ,
-      {
-        "component": "richtext",
-        "name": "subtitle",
-        "value": "",
-        "label": "Subtitle",
-        "valueType": "string"
       }
     ]
   },

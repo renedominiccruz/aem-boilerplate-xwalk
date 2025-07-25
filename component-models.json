@@ -17,48 +17,22 @@
         "value": ""
       },
       {
-      "component": "select",
-      "name": "classes",
-      "value": "",
-      "label": "Background Color",
-      "description": "The quote background color",
-      "valueType": "string",
-      "options": [
-        {
-          "name": "Red",
-          "value": "bg-red"
-        },
-        {
-          "name": "Green",
-          "value": "bg-green"
-        },
-        {
-          "name": "Blue",
-          "value": "bg-blue"
-        }
-      ]
-      },
-      {
       "component": "container",
       "label": "Input fields",
-      "name": "inputFields",
+      "name": "inputfields",
       "valueType": "string",
       "collapsible": true,
       "fields": [
         {
-          "component": "select",
-          "label": "Type",
-          "name": "type",
-          "valueType": "string",
-          "options": [
-            { "name": "text", "value": "text" },
-            { "name": "number", "value": "number" }
-          ]
-        },
-        {
           "component": "text-input",
           "label": "Name",
           "name": "name",
+          "valueType": "string"
+        }
+        {
+          "component": "text-input",
+          "label": "Name2",
+          "name": "name2",
           "valueType": "string"
         }
       ]

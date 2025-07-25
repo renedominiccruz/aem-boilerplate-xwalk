@@ -17,13 +17,6 @@
         "value": ""
       },
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "quote_subtitle",
-        "label": "Subtitle",
-        "value": ""
-      },
-      {
       "component": "select",
       "name": "classes",
       "value": "",

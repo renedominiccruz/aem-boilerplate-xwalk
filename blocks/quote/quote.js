@@ -1,7 +1,24 @@
 export default function decorate(block) {
-  const [quoteWrapper] = block.children;
+  const paragraphs = block.querySelectorAll('p');
 
-  const blockquote = document.createElement('blockquote');
-  blockquote.textContent = quoteWrapper.textContent.trim();
-  quoteWrapper.replaceChildren(blockquote);
+  if (paragraphs.length > 0) {
+    // Remove the first <p> (the one with 'text')
+    paragraphs[0].remove();
+  }
+
+  if (paragraphs.length > 1) {
+    // Convert the second <p> into input
+    const addressP = paragraphs[1] || block.querySelector('p');
+
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.name = 'address';
+    input.placeholder = 'Enter address';
+
+    // Add Universal Editor binding (if needed)
+    input.setAttribute('data-aue-prop', 'address');
+    input.setAttribute('data-aue-type', 'text');
+
+    addressP.replaceWith(input);
+  }
 }

@@ -93,7 +93,6 @@
                   "name": "Quote",
                   "model": "quote",
                   "title": "<p>Think, McFly! Think!</p>",
-                  "quote_title": "<p>Think, McFly! Think!</p>",
                   "quote_author": "Biff Tannen",
                   "quote_subtitle": "Back to the Future",
                   "inputFields": []

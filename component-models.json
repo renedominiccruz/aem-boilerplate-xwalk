@@ -10,13 +10,6 @@
         "label": "Quote Title"
       },
       {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "quote_title",
-        "value": "",
-        "label": "Quote"
-      },
-      {
         "component": "text",
         "valueType": "string",
         "name": "quote_author",

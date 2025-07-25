@@ -1,5 +1,35 @@
 [
   {
+    "id": "inputfields",
+    "fields": [
+      {
+      "component": "container",
+      "label": "Input Fields Dialog",
+      "name": "inputfieldsdialog",
+      "valueType": "string",
+      "collapsible": true,
+      "fields": [
+        {
+          "component": "select",
+          "label": "Type",
+          "name": "inputfields_type",
+          "valueType": "string",
+          "options": [
+            { "name": "text", "value": "text" },
+            { "name": "number", "value": "number" }
+          ]
+        },
+        {
+          "component": "text",
+          "label": "Name",
+          "name": "inputfields_name",
+          "valueType": "string"
+        }
+      ]
+      }
+    ]
+  },
+  {
     "id": "page-metadata",
     "fields": [
       {

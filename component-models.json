@@ -4,22 +4,22 @@
     "fields": [
       {
         "component": "richtext",
+        "valueType": "string",
         "name": "quote",
         "value": "",
-        "label": "Quote",
-        "valueType": "string"
+        "label": "Quote"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "author",
+        "name": "quote_author",
         "label": "Author",
         "value": ""
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "subtitle",
+        "name": "quote_subtitle",
         "label": "Subtitle",
         "value": ""
       },
@@ -44,6 +44,14 @@
           "value": "bg-blue"
         }
       ]
+    },
+    {
+      "component": "spreadsheet-input",
+      "name": "quote_metadata",
+      "label": "Metadata",
+      "key-value": true,
+      "valueType": "string",
+      "description": "Add key-value metadata for the quote (e.g., category, source)"
     }
     ]
   },

@@ -15,13 +15,14 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "formContainer"
     ]
   },
   {
-    "id": "cards",
+    "id": "formContainer",
     "components": [
-      "card"
+      "inputfields"
     ]
   },
   {

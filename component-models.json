@@ -24,13 +24,13 @@
       "collapsible": true,
       "fields": [
         {
-          "component": "text-input",
+          "component": "text",
           "label": "Name",
           "name": "name",
           "valueType": "string"
         }
         {
-          "component": "text-input",
+          "component": "text",
           "label": "Name2",
           "name": "name2",
           "valueType": "string"

@@ -53,19 +53,27 @@
       ]
     },
     {
-      "component": "multifield",
-      "name": "quote_metadata",
-      "label": "Metadata",
+      "component": "container",
+      "label": "Input fields",
+      "name": "inputFields",
+      "valueType": "string",
+      "collapsible": true,
       "fields": [
         {
-          "component": "text",
-          "name": "key",
-          "label": "Key"
+          "component": "select",
+          "label": "Type",
+          "name": "type",
+          "valueType": "string",
+          "options": [
+            { "name": "text", "value": "text" },
+            { "name": "number", "value": "number" }
+          ]
         },
         {
-          "component": "text",
-          "name": "value",
-          "label": "Value"
+          "component": "text-input",
+          "label": "Name",
+          "name": "name",
+          "valueType": "string"
         }
       ]
     }

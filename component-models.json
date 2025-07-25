@@ -36,7 +36,7 @@
         {
           "component": "text",
           "label": "Name",
-          "name": "name",
+          "name": "inputFieldName",
           "valueType": "string"
         }
       ]

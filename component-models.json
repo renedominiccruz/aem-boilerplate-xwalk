@@ -13,11 +13,13 @@
         "component": "richtext",
         "valueType": "string",
         "name": "quote_title",
+        "key-value": true,
         "value": "",
         "label": "Quote"
       },
       {
         "component": "text",
+        "key-value": true,
         "valueType": "string",
         "name": "quote_author",
         "label": "Author",
@@ -26,6 +28,7 @@
       {
         "component": "text",
         "valueType": "string",
+        "key-value": true,
         "name": "quote_subtitle",
         "label": "Subtitle",
         "value": ""
@@ -51,14 +54,6 @@
           "value": "bg-blue"
         }
       ]
-    },
-    {
-      "component": "spreadsheet-input",
-      "name": "quote_metadata",
-      "label": "Metadata",
-      "key-value": true,
-      "valueType": "string",
-      "description": "Add key-value metadata for the quote (e.g., category, source)"
     }
     ]
   },

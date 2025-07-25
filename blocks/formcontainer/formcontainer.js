@@ -1,6 +1,4 @@
 export default function decorate(block) {
-    console.log('RAW Block HTML:', block.innerHTML);
-  console.log('Children nodes:', block.children);
    const rows = block.querySelectorAll('div > div');
 
   rows.forEach((row) => {

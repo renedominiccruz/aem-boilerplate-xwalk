@@ -1,5 +1,5 @@
 [
-  {
+    {
     "id": "quote",
     "fields": [
       {
@@ -43,6 +43,8 @@
           "name": "Blue",
           "value": "bg-blue"
         }
+      ]
+      }
       ]
     },
     {

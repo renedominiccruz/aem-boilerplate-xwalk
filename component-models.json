@@ -3,20 +3,6 @@
     "id": "quote",
     "fields": [
       {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "title",
-        "value": "",
-        "label": "Quote Title"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "quote_author",
-        "label": "Author",
-        "value": ""
-      },
-      {
       "component": "container",
       "label": "Input fields",
       "name": "inputfields",

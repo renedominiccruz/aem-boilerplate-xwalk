@@ -1,5 +1,5 @@
 [
-    {
+  {
     "id": "quote",
     "fields": [
       {
@@ -44,10 +44,8 @@
           "value": "bg-blue"
         }
       ]
-      }
-      ]
-    },
-    {
+      },
+      {
       "component": "container",
       "label": "Input fields",
       "name": "inputFields",
@@ -71,7 +69,7 @@
           "valueType": "string"
         }
       ]
-    }
+      }
     ]
   },
   {

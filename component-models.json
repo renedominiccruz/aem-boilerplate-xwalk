@@ -53,12 +53,21 @@
       ]
     },
     {
-      "component": "spreadsheet-input",
-      "name": "metadata",
+      "component": "multifield",
+      "name": "quote_metadata",
       "label": "Metadata",
-      "key-value": true,
-      "valueType": "string",
-      "description": "Add key-value metadata for the quote (e.g., category, source)"
+      "fields": [
+        {
+          "component": "text",
+          "name": "key",
+          "label": "Key"
+        },
+        {
+          "component": "text",
+          "name": "value",
+          "label": "Value"
+        }
+      ]
     }
     ]
   },

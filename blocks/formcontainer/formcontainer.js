@@ -1,13 +1,9 @@
 export default function decorate(block) {
-    // Create the form element
   const form = document.createElement('form');
   form.classList.add('formcontainer-form');
-
   const rows = block.querySelectorAll('div > div');
-
   rows.forEach((row) => {
     const paragraphs = row.querySelectorAll('p');
-
     if (paragraphs.length >= 2) {
       // Create a wrapper for each field (label + input)
       const fieldWrapper = document.createElement('div');

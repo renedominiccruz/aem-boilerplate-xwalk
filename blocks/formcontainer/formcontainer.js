@@ -54,7 +54,6 @@ export default function decorate(block) {
   // Optional: handle form submission
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const formData = new FormData(form);
     // Here you can send data to your API (e.g., AEM endpoint or external service)
   });
 }

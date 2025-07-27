@@ -5,14 +5,14 @@
       {
       "component": "container",
       "label": "Input Fields Dialog",
-      "name": "inputfieldsdialog",
+      "name": "inputfields",
       "valueType": "string",
       "collapsible": true,
       "fields": [
         {
           "component": "select",
           "label": "Type",
-          "name": "inputfieldsdialog_type",
+          "name": "inputfields_type",
           "valueType": "string",
           "options": [
             { "name": "text", "value": "text" },
@@ -23,7 +23,7 @@
         {
           "component": "text",
           "label": "Name",
-          "name": "inputfieldsdialog_name",
+          "name": "inputfields_name",
           "valueType": "string"
         }
       ]

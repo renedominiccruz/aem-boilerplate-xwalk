@@ -5,7 +5,7 @@
       {
       "component": "container",
       "label": "Input Fields Dialog",
-      "name": "inputfieldsdialog",
+      "name": "inputfields",
       "valueType": "string",
       "collapsible": true,
       "fields": [

@@ -15,9 +15,9 @@
           "name": "inputfields_type",
           "valueType": "string",
           "options": [
-            { "name": "text", "type": "text" },
-            { "name": "email", "type": "email" },
-            { "name": "number", "type": "number" }
+            { "name": "text", "value": "text" },
+            { "name": "email", "value": "email" },
+            { "name": "number", "value": "number" }
           ]
         },
         {

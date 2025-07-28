@@ -4,7 +4,7 @@ function isEditorMode() {
 export default function decorate(block) {
   // Skip transformation in editor
   if (isEditorMode()) {
-    return; 
+    return;
   }
   // Prevent duplicate initialization
   if (block.dataset.initialized) return;

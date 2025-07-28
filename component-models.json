@@ -1,27 +1,5 @@
 [
   {
-    "id": "fields",
-    "fields": [
-        {
-          "component": "select",
-          "label": "Type",
-          "name": "field_type",
-          "valueType": "string",
-          "options": [
-            { "name": "text", "value": "text" },
-            { "name": "email", "value": "email" },
-            { "name": "number", "value": "number" }
-          ]
-        },
-        {
-          "component": "text",
-          "label": "Name",
-          "name": "field_name",
-          "valueType": "string"
-        }
-    ]
-  },
-  {
     "id": "page-metadata",
     "fields": [
       {
@@ -202,20 +180,32 @@
     ]
   },
   {
-    "id": "card",
+    "id": "fields",
     "fields": [
       {
-        "component": "reference",
+        "component": "select",
+        "label": "Type",
+        "name": "field_type",
         "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
+        "options": [
+          {
+            "name": "text",
+            "value": "text"
+          },
+          {
+            "name": "email",
+            "value": "email"
+          },
+          {
+            "name": "number",
+            "value": "number"
+          }
+        ]
       },
       {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
+        "component": "text",
+        "label": "Name",
+        "name": "field_name",
         "valueType": "string"
       }
     ]

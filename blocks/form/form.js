@@ -3,13 +3,9 @@ export default function decorate(block) {
   if (block.dataset.initialized) return;
   block.dataset.initialized = 'true';
 
-  // Detect editor mode
-  const isEditor = Boolean(document.querySelector('#editor-app'));
-
-  if (isEditor) {
-    document.body.classList.add('is-editor');
-  } else {
-    document.body.classList.remove('is-editor');
+  if (!document.querySelector('#editor-app')) {
+    // We are in published mode
+    document.body.classList.add('published');
   }
 
   // Create a single form wrapper
@@ -50,23 +46,20 @@ export default function decorate(block) {
     }
   });
 
-  // Add single submit button (published mode only)
-  if (!isEditor) {
-    const submitButton = document.createElement('button');
-    submitButton.type = 'submit';
-    submitButton.textContent = 'Submit';
-    submitButton.classList.add('form-submit-btn');
-    form.appendChild(submitButton);
+  const submitButton = document.createElement('button');
+  submitButton.type = 'submit';
+  submitButton.textContent = 'Submit';
+  submitButton.classList.add('form-submit-btn');
+  form.appendChild(submitButton);
 
-    submitButton.addEventListener('click', (event) => {
-      event.preventDefault();
-      const formData = new FormData(form);
-      const data = {};
-      formData.forEach((value, key) => {
-        data[key] = value;
-      });
+  submitButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
     });
-  }
+  });
 
   // Append final form at end of block
   block.appendChild(form);

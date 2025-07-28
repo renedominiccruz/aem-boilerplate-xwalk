@@ -1,5 +1,5 @@
 /* Hide authored text in published mode */
-body:not(.is-editor) .form.block > div > div > p {
+body.published .form.block > div > div > p {
   display: none;
 }
 

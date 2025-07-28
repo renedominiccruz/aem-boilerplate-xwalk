@@ -6,7 +6,7 @@ export default function decorate(block) {
   const form = document.createElement('form');
   form.classList.add('generated-form');
 
-  const rows = block.querySelectorAll('div > div');
+  const rows = block.querySelectorAll(':scope > div > div');
 
   rows.forEach((row) => {
     const paragraphs = row.querySelectorAll('p');

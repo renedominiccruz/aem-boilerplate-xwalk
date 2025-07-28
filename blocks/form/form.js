@@ -64,9 +64,9 @@ export default function decorate(block) {
     const email = formData.get('email');
 
     // Replace with your Mailchimp details
-    const API_KEY = 'ca3a9d85b750109c4bbf524a1dd73c79'; // <-- Insecure in frontend!
-    const LIST_ID = '87672397bc';
-    const DC = 'us13'; // e.g., us21
+    const API_KEY = 'aaa'; // <-- Insecure in frontend!
+    const LIST_ID = 'bbb';
+    const DC = 'ccc'; // e.g., us21
 
     const url = `https://${DC}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`;
 

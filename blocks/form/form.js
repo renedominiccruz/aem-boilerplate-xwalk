@@ -1,6 +1,6 @@
 export default function decorate(block) {
   // Prevent rendering on Universal Editor edit mode
-  if (document.body.classList.contains('editor-app')) return;
+  if (document.querySelector('#editor-app')) return;
   // Prevent duplicate initialization
   if (block.dataset.initialized) return;
   block.dataset.initialized = 'true';

@@ -75,7 +75,7 @@ export default function decorate(block) {
       const response = await fetch(url, {
         method: 'POST',
         headers: {
-          'Authorization': `apikey ${API_KEY}`,
+          Authorization: `apikey ${API_KEY}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
@@ -98,7 +98,6 @@ export default function decorate(block) {
       statusMessage.classList.add('error');
     }
     });
-  
 
   // Append final form at end of block
   block.appendChild(form);

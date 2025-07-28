@@ -1,5 +1,4 @@
 export default function decorate(block) {
-export default function decorate(block) {
   // Prevent duplicate initialization
   if (block.dataset.initialized) return;
   block.dataset.initialized = 'true';

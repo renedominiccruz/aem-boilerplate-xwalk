@@ -1,5 +1,5 @@
 export default function decorate(block) {
-  
+  // Prevent rendering on Universal Editor edit mode
   if (document.body.classList.contains('hlx-ue-edit')) return;
   // Prevent duplicate initialization
   if (block.dataset.initialized) return;

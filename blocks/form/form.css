@@ -1,7 +1,6 @@
 /* Hide authored text in published mode */
-body:not(.hlx-ue-edit) .form-field p,
-body:not(.hlx-ue-edit) .formfields > p {
-  display: none !important;
+:not(#editor-app) .form.block > div > div > p {
+  display: none;
 }
 
 .generated-form {

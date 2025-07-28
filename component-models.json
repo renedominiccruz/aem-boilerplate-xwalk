@@ -5,7 +5,7 @@
         {
           "component": "select",
           "label": "Type",
-          "name": "fieldoptions_type",
+          "name": "field_type",
           "valueType": "string",
           "options": [
             { "name": "text", "value": "text" },
@@ -16,7 +16,7 @@
         {
           "component": "text",
           "label": "Name",
-          "name": "fieldoptions_name",
+          "name": "field_name",
           "valueType": "string"
         }
     ]

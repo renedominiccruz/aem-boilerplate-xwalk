@@ -144,14 +144,14 @@
         },
         {
           "title": "Fields",
-          "id": "fields",
+          "id": "formfields",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Fields",
-                  "model": "fields"
+                  "model": "formfields"
                 }
               }
             }

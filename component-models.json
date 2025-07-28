@@ -180,12 +180,12 @@
     ]
   },
   {
-    "id": "fields",
+    "id": "formfields",
     "fields": [
       {
         "component": "select",
         "label": "Type",
-        "name": "field_type",
+        "name": "formfields_type",
         "valueType": "string",
         "options": [
           {
@@ -205,7 +205,7 @@
       {
         "component": "text",
         "label": "Name",
-        "name": "field_name",
+        "name": "formfields_name",
         "valueType": "string"
       }
     ]

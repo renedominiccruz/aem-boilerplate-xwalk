@@ -5,14 +5,14 @@
       {
       "component": "container",
       "label": "Fields",
-      "name": "fields",
+      "name": "fieldoptions",
       "valueType": "string",
       "collapsible": true,
       "fields": [
         {
           "component": "select",
           "label": "Type",
-          "name": "fields_type",
+          "name": "fieldoptions_type",
           "valueType": "string",
           "options": [
             { "name": "text", "value": "text" },
@@ -23,7 +23,7 @@
         {
           "component": "text",
           "label": "Name",
-          "name": "fields_name",
+          "name": "fieldoptions_name",
           "valueType": "string"
         }
       ]

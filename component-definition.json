@@ -107,7 +107,7 @@
                 "template": {
                   "name": "Fields",
                   "model": "fields",
-                  "fields": []
+                  "fieldoptions": []
                 }
               }
             }

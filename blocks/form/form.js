@@ -7,7 +7,7 @@ export default function decorate(block) {
   const isEditor = Boolean(
     document.body.classList.contains('hlx-ue-edit')
     || window.location.search.includes('edit')
-    || document.querySelector('#editor-app')
+    || document.querySelector('#editor-app'),
   );
 
   // Create a single form wrapper
@@ -63,7 +63,6 @@ export default function decorate(block) {
       formData.forEach((value, key) => {
         data[key] = value;
       });
-      console.log('Form submitted:', data);
     });
   }
 

@@ -54,7 +54,6 @@ export default function decorate(block) {
       data[key] = value;
     });
 
-
     // TODO: send data to API/servlet if needed
     // fetch('/bin/your-servlet', { method: 'POST', body: JSON.stringify(data) });
   });

@@ -45,16 +45,15 @@ export default function decorate(block) {
   });
 
   // Add single submit button (published mode only)
-  if (!isEditor) {
-    const submitButton = document.createElement('button');
-    submitButton.type = 'submit';
-    submitButton.textContent = 'Submit';
-    submitButton.classList.add('form-submit-btn');
-    form.appendChild(submitButton);
-    const statusMessage = document.createElement('div');
-    statusMessage.classList.add('form-status');
-    form.appendChild(statusMessage);
-    form.addEventListener('submit', async (event) => {
+  const submitButton = document.createElement('button');
+  submitButton.type = 'submit';
+  submitButton.textContent = 'Submit';
+  submitButton.classList.add('form-submit-btn');
+  form.appendChild(submitButton);
+  const statusMessage = document.createElement('div');
+  statusMessage.classList.add('form-status');
+  form.appendChild(statusMessage);
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     if (isEditor) {
@@ -99,7 +98,7 @@ export default function decorate(block) {
       statusMessage.classList.add('error');
     }
     });
-  }
+  
 
   // Append final form at end of block
   block.appendChild(form);

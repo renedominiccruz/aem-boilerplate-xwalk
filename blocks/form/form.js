@@ -1,6 +1,5 @@
-function isEditorMode() {
-  return document.querySelector('#editor-app') !== null;
-}
+import { moveInstrumentation } from '../../scripts/scripts.js';
+
 export default function decorate(block) {
   // Prevent duplicate initialization
   if (block.dataset.initialized) return;

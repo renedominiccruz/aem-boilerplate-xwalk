@@ -1,4 +1,6 @@
 export default function decorate(block) {
+  
+  if (document.body.classList.contains('hlx-ue-edit')) return;
   // Prevent duplicate initialization
   if (block.dataset.initialized) return;
   block.dataset.initialized = 'true';

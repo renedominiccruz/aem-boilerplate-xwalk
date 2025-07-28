@@ -51,14 +51,53 @@ export default function decorate(block) {
     submitButton.textContent = 'Submit';
     submitButton.classList.add('form-submit-btn');
     form.appendChild(submitButton);
+    const statusMessage = document.createElement('div');
+    statusMessage.classList.add('form-status');
+    form.appendChild(statusMessage);
+    form.addEventListener('submit', async (event) => {
+    event.preventDefault();
 
-    submitButton.addEventListener('click', (event) => {
-      event.preventDefault();
-      const formData = new FormData(form);
-      const data = {};
-      formData.forEach((value, key) => {
-        data[key] = value;
+    if (isEditor) {
+      console.log('Editor mode — submission disabled');
+      return;
+    }
+
+    const formData = new FormData(form);
+    const email = formData.get('email');
+
+    // Replace with your Mailchimp details
+    const API_KEY = 'ca3a9d85b750109c4bbf524a1dd73c79'; // <-- Insecure in frontend!
+    const LIST_ID = '87672397bc';
+    const DC = 'us13'; // e.g., us21
+
+    const url = `https://${DC}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`;
+
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Authorization': `apikey ${API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email_address: email,
+          status: 'subscribed',
+        }),
       });
+
+      if (response.ok) {
+        statusMessage.textContent = 'Thank you! You are subscribed.';
+        statusMessage.classList.add('success');
+        form.reset();
+      } else {
+        const error = await response.json();
+        statusMessage.textContent = `Error: ${error.detail}`;
+        statusMessage.classList.add('error');
+      }
+    } catch (err) {
+      statusMessage.textContent = 'Network error. Please try again later.';
+      statusMessage.classList.add('error');
+    }
     });
   }
 

@@ -1,6 +1,5 @@
 export default function decorate(block) {
-   // Prevent duplicate initialization
- if (block.dataset.initialized) return;
+  if (block.dataset.initialized) return;
   block.dataset.initialized = 'true';
 
   // Create a <form> wrapper
@@ -54,6 +53,7 @@ export default function decorate(block) {
     formData.forEach((value, key) => {
       data[key] = value;
     });
+
 
     // TODO: send data to API/servlet if needed
     // fetch('/bin/your-servlet', { method: 'POST', body: JSON.stringify(data) });

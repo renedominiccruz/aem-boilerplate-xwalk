@@ -1,10 +1,9 @@
-/* Hide authored text in published mode */
-html.adobe-ue-edit .form.block > div > div > p {
-  display: block;
+.form.block > div > div > p {
+  display: none; /* General (publish) */
 }
 
-.form.block > div > div > p {
-  display: none;
+html.adobe-ue-edit .form.block > div > div > p {
+  display: block; /* Specific (editor) */
 }
 
 .generated-form {

@@ -83,7 +83,7 @@
       "id": "blocks",
       "components": [
         {
-          "title": "Form Container",
+          "title": "FormContainer",
           "id": "formcontainer",
           "plugins": {
             "xwalk": {
@@ -98,7 +98,7 @@
           }
         },
         {
-          "title": "Input Fields",
+          "title": "InputFields",
           "id": "inputfields",
           "plugins": {
             "xwalk": {

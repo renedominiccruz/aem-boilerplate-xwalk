@@ -58,11 +58,9 @@ export default function decorate(block) {
       formData.forEach((value, key) => {
         data[key] = value;
       });
-      console.log('Form submitted:', data);
     });
   }
 
   // Append form after authored content (keep <p> for editor mode)
   block.appendChild(form);
 }
-

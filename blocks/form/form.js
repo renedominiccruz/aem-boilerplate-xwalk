@@ -3,10 +3,8 @@ export default function decorate(block) {
   if (block.dataset.initialized) return;
   block.dataset.initialized = 'true';
 
-  if (!document.querySelector('#editor-app')) {
-    // We are in published mode
-    document.body.classList.add('published');
-  }
+  // Detect editor mode
+  const isEditor = Boolean(document.documentElement.classList.contains('adobe-ue-edit'));
 
   // Create a single form wrapper
   const form = document.createElement('form');
@@ -46,20 +44,23 @@ export default function decorate(block) {
     }
   });
 
-  const submitButton = document.createElement('button');
-  submitButton.type = 'submit';
-  submitButton.textContent = 'Submit';
-  submitButton.classList.add('form-submit-btn');
-  form.appendChild(submitButton);
+  // Add single submit button (published mode only)
+  if (!isEditor) {
+    const submitButton = document.createElement('button');
+    submitButton.type = 'submit';
+    submitButton.textContent = 'Submit';
+    submitButton.classList.add('form-submit-btn');
+    form.appendChild(submitButton);
 
-  submitButton.addEventListener('click', (event) => {
-    event.preventDefault();
-    const formData = new FormData(form);
-    const data = {};
-    formData.forEach((value, key) => {
-      data[key] = value;
+    submitButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      const formData = new FormData(form);
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
     });
-  });
+  }
 
   // Append final form at end of block
   block.appendChild(form);

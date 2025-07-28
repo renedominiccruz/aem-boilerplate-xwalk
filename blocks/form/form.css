@@ -1,5 +1,9 @@
 /* Hide authored text in published mode */
-body.published .form.block > div > div > p {
+html.adobe-ue-edit .form.block > div > div > p {
+  display: block;
+}
+
+.form.block > div > div > p {
   display: none;
 }
 

@@ -3,7 +3,7 @@ export default function decorate(block) {
   if (block.dataset.initialized) return;
   block.dataset.initialized = 'true';
 
-  // Detect editor mode (skip transformation if active)
+  // Detect editor mode (skip transformations if active)
   const isEditor = document.body.classList.contains('hlx-ue-edit')
     || window.location.search.includes('edit')
     || document.querySelector('#editor-app');
@@ -12,22 +12,20 @@ export default function decorate(block) {
   const form = document.createElement('form');
   form.classList.add('generated-form');
 
-  // Get rows (each field) from authored structure
+  // Build inputs from authored <p>
   const rows = block.querySelectorAll(':scope > div > div');
-
   rows.forEach((row) => {
     const paragraphs = row.querySelectorAll('p');
 
     if (paragraphs.length >= 2) {
-      // First <p> = type, second <p> = label/name
-      const fieldType = paragraphs[0].textContent.trim().toLowerCase();
+      const fieldType = paragraphs[0].textContent.trim().toLowerCase(); // text/email
       const fieldName = paragraphs[1].textContent.trim().toLowerCase().replace(/\s+/g, '-');
 
       // Field wrapper
       const fieldWrapper = document.createElement('div');
       fieldWrapper.classList.add('form-field');
 
-      // Label (for published mode)
+      // Label
       const label = document.createElement('label');
       label.setAttribute('for', fieldName);
       label.textContent = fieldName.charAt(0).toUpperCase() + fieldName.slice(1);
@@ -42,17 +40,10 @@ export default function decorate(block) {
       fieldWrapper.appendChild(label);
       fieldWrapper.appendChild(input);
       form.appendChild(fieldWrapper);
-
-      // Hide <p> visually in published mode (keep in DOM for editor)
-      if (!isEditor) {
-        paragraphs.forEach((p) => {
-          p.style.display = 'none';
-        });
-      }
     }
   });
 
-  // Submit button (only visible in published mode)
+  // Add submit button (published only)
   if (!isEditor) {
     const submitButton = document.createElement('button');
     submitButton.type = 'submit';
@@ -60,7 +51,6 @@ export default function decorate(block) {
     submitButton.classList.add('form-submit-btn');
     form.appendChild(submitButton);
 
-    // Optional: Handle submit
     submitButton.addEventListener('click', (event) => {
       event.preventDefault();
       const formData = new FormData(form);
@@ -68,10 +58,11 @@ export default function decorate(block) {
       formData.forEach((value, key) => {
         data[key] = value;
       });
-      console.log('Form submitted with data:', data);
+      console.log('Form submitted:', data);
     });
   }
 
-  // Append form at the end (preserve <p> for authoring)
+  // Append form after authored content (keep <p> for editor mode)
   block.appendChild(form);
 }
+

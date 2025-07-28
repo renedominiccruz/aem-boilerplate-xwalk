@@ -96,7 +96,7 @@ export default function decorate(block) {
       statusMessage.textContent = 'Network error. Please try again later.';
       statusMessage.classList.add('error');
     }
-});
+  });
 
   // Append final form at end of block
   block.appendChild(form);

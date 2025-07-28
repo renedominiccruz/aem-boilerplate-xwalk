@@ -4,11 +4,13 @@ export default function decorate(block) {
   block.dataset.initialized = 'true';
 
   // Detect editor mode
-  const isEditor = Boolean(
-    document.body.classList.contains('hlx-ue-edit')
-    || window.location.search.includes('edit')
-    || document.querySelector('#editor-app'),
-  );
+  const isEditor = Boolean(document.querySelector('#editor-app'));
+
+  if (isEditor) {
+    document.body.classList.add('is-editor');
+  } else {
+    document.body.classList.remove('is-editor');
+  }
 
   // Create a single form wrapper
   const form = document.createElement('form');

@@ -1,10 +1,5 @@
-/* Show authored text in author mode */
-#editor-app.form.block > div > div > p {
-  display: none;
-}
-
 /* Hide authored text in published mode */
-:not(#editor-app) .form.block > div > div > p {
+body:not(.is-editor) .form.block > div > div > p {
   display: none;
 }
 

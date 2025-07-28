@@ -1,15 +1,12 @@
-import { moveInstrumentation } from '../../scripts/scripts.js';
-
 export default function decorate(block) {
   // Prevent duplicate initialization
   if (block.dataset.initialized) return;
   block.dataset.initialized = 'true';
 
   // Detect editor mode (skip transformation if active)
-  const isEditor =
-    document.body.classList.contains('hlx-ue-edit') ||
-    window.location.search.includes('edit') ||
-    document.querySelector('#editor-app');
+  const isEditor = document.body.classList.contains('hlx-ue-edit')
+    || window.location.search.includes('edit')
+    || document.querySelector('#editor-app');
 
   // Create form wrapper
   const form = document.createElement('form');
@@ -23,8 +20,8 @@ export default function decorate(block) {
 
     if (paragraphs.length >= 2) {
       // First <p> = type, second <p> = label/name
-      const fieldType = paragraphs[0].textContent.trim().toLowerCase(); // "text", "email"
-      const fieldName = paragraphs[1].textContent.trim().toLowerCase().replace(/\s+/g, '-'); // "firstname"
+      const fieldType = paragraphs[0].textContent.trim().toLowerCase();
+      const fieldName = paragraphs[1].textContent.trim().toLowerCase().replace(/\s+/g, '-');
 
       // Field wrapper
       const fieldWrapper = document.createElement('div');
@@ -48,7 +45,9 @@ export default function decorate(block) {
 
       // Hide <p> visually in published mode (keep in DOM for editor)
       if (!isEditor) {
-        paragraphs.forEach((p) => (p.style.display = 'none'));
+        paragraphs.forEach((p) => {
+          p.style.display = 'none';
+        });
       }
     }
   });
@@ -69,10 +68,10 @@ export default function decorate(block) {
       formData.forEach((value, key) => {
         data[key] = value;
       });
+      console.log('Form submitted with data:', data);
     });
   }
 
   // Append form at the end (preserve <p> for authoring)
-  block.appendChild(form); 
+  block.appendChild(form);
 }
-

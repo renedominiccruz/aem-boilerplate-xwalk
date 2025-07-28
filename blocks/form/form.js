@@ -1,27 +1,29 @@
 export default function decorate(block) {
+export default function decorate(block) {
   // Prevent duplicate initialization
   if (block.dataset.initialized) return;
   block.dataset.initialized = 'true';
 
-  // Detect editor mode (skip transformations if active)
+  // Detect editor mode
   const isEditor = document.body.classList.contains('hlx-ue-edit')
     || window.location.search.includes('edit')
     || document.querySelector('#editor-app');
 
-  // Create form wrapper
+  // Create a single form wrapper
   const form = document.createElement('form');
   form.classList.add('generated-form');
 
-  // Build inputs from authored <p>
+  // Find ALL formfields rows (nested div > div)
   const rows = block.querySelectorAll(':scope > div > div');
+
   rows.forEach((row) => {
     const paragraphs = row.querySelectorAll('p');
 
     if (paragraphs.length >= 2) {
-      const fieldType = paragraphs[0].textContent.trim().toLowerCase(); // text/email
+      const fieldType = paragraphs[0].textContent.trim().toLowerCase();
       const fieldName = paragraphs[1].textContent.trim().toLowerCase().replace(/\s+/g, '-');
 
-      // Field wrapper
+      // Create wrapper for each input field
       const fieldWrapper = document.createElement('div');
       fieldWrapper.classList.add('form-field');
 
@@ -36,14 +38,16 @@ export default function decorate(block) {
       input.name = fieldName;
       input.id = fieldName;
 
-      // Append to wrapper
+      // Append label and input to wrapper
       fieldWrapper.appendChild(label);
       fieldWrapper.appendChild(input);
+
+      // Add field to form
       form.appendChild(fieldWrapper);
     }
   });
 
-  // Add submit button (published only)
+  // Add single submit button (published mode only)
   if (!isEditor) {
     const submitButton = document.createElement('button');
     submitButton.type = 'submit';
@@ -58,9 +62,10 @@ export default function decorate(block) {
       formData.forEach((value, key) => {
         data[key] = value;
       });
+      console.log('Form submitted:', data);
     });
   }
 
-  // Append form after authored content (keep <p> for editor mode)
+  // Append final form at end of block
   block.appendChild(form);
 }

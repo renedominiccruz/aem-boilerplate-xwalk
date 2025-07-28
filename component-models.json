@@ -2,13 +2,6 @@
   {
     "id": "fields",
     "fields": [
-      {
-      "component": "container",
-      "label": "Fields",
-      "name": "fieldoptions",
-      "valueType": "string",
-      "collapsible": true,
-      "fields": [
         {
           "component": "select",
           "label": "Type",
@@ -26,8 +19,6 @@
           "name": "fieldoptions_name",
           "valueType": "string"
         }
-      ]
-      }
     ]
   },
   {

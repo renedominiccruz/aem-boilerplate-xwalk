@@ -16,13 +16,13 @@
       "cards",
       "columns",
       "fragment",
-      "formcontainer"
+      "form"
     ]
   },
   {
-    "id": "formcontainer",
+    "id": "form",
     "components": [
-      "inputfields"
+      "fields"
     ]
   },
   {

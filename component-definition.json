@@ -83,32 +83,31 @@
       "id": "blocks",
       "components": [
         {
-          "title": "FormContainer",
-          "id": "formcontainer",
+          "title": "Form",
+          "id": "form",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "FormContainer",
-                  "filter": "formcontainer",
-                  "inputfields": []
+                  "name": "Form",
+                  "filter": "form"
                 }
               }
             }
           }
         },
         {
-          "title": "InputFields",
-          "id": "inputfields",
+          "title": "Fields",
+          "id": "fields",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
-                  "name": "InputFields",
-                  "model": "inputfields",
-                  "inputfields": []
+                  "name": "Fields",
+                  "model": "fields",
+                  "fields": []
                 }
               }
             }

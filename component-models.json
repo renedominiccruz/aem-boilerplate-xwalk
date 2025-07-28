@@ -1,18 +1,18 @@
 [
   {
-    "id": "inputfields",
+    "id": "fields",
     "fields": [
       {
       "component": "container",
-      "label": "Input Fields Dialog",
-      "name": "inputfields",
+      "label": "Fields",
+      "name": "fields",
       "valueType": "string",
       "collapsible": true,
       "fields": [
         {
           "component": "select",
           "label": "Type",
-          "name": "inputfields_type",
+          "name": "fields_type",
           "valueType": "string",
           "options": [
             { "name": "text", "value": "text" },
@@ -23,7 +23,7 @@
         {
           "component": "text",
           "label": "Name",
-          "name": "inputfields_name",
+          "name": "fields_name",
           "valueType": "string"
         }
       ]

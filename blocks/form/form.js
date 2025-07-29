@@ -59,13 +59,13 @@ export default function decorate(block) {
     if (isEditor) {
       return;
     }
-    const actionUrl = "http://localhost:4502/bin/edgeMailchimp"; // Replace with your AEM servlet endpoint
+    const actionUrl = 'http://localhost:4502/bin/edgeMailchimp';
     const formData = new FormData(form);
     try {
       // Call your AEM servlet endpoint instead of Mailchimp API directly
       const response = await fetch(actionUrl, {
-        method: 'POST',  
-        body: formData // automatically sets proper Content-Type
+        method: 'POST',
+        body: formData,
       });
       if (response.ok) {
         statusMessage.textContent = 'Thank you! You are subscribed.';
@@ -75,7 +75,7 @@ export default function decorate(block) {
         const error = await response.json();
         statusMessage.textContent = `Error: ${error.detail}`;
         statusMessage.classList.add('error');
-      }    
+      }
     } catch (err) {
       statusMessage.textContent = 'Network error. Please try again later.';
       statusMessage.classList.add('error');

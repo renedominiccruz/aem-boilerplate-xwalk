@@ -3,3 +3,7 @@ mountpoints:
     url: "https://author-p28003-e1277044.adobeaemcloud.com/bin/franklin.delivery/renedominiccruz/aem-boilerplate-xwalk/main"
     type: "markup"
     suffix: ".html"
+  /api/:
+    url: "https://publish-p28003-e1277044.adobeaemcloud.com/bin"
+    type: "markup"
+    suffix: ".html"

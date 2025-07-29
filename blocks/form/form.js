@@ -59,30 +59,14 @@ export default function decorate(block) {
     if (isEditor) {
       return;
     }
-
+    const actionUrl = "http://localhost:4502/bin/edgeMailchimp"; // Replace with your AEM servlet endpoint
     const formData = new FormData(form);
-    const email = formData.get('email');
-
-    // Replace with your Mailchimp details
-    const API_KEY = 'ca3a9d85b750109c4bbf524a1dd73c79'; // <-- Insecure in frontend!
-    const LIST_ID = '87672397bc';
-    const DC = 'us13'; // e.g., us21
-
-    const url = `https://${DC}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`;
-
     try {
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-          Authorization: `apikey ${API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email_address: email,
-          status: 'subscribed',
-        }),
+      // Call your AEM servlet endpoint instead of Mailchimp API directly
+      const response = await fetch(actionUrl, {
+        method: 'POST',  
+        body: formData // automatically sets proper Content-Type
       });
-
       if (response.ok) {
         statusMessage.textContent = 'Thank you! You are subscribed.';
         statusMessage.classList.add('success');
@@ -91,7 +75,7 @@ export default function decorate(block) {
         const error = await response.json();
         statusMessage.textContent = `Error: ${error.detail}`;
         statusMessage.classList.add('error');
-      }
+      }    
     } catch (err) {
       statusMessage.textContent = 'Network error. Please try again later.';
       statusMessage.classList.add('error');

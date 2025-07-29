@@ -4,6 +4,6 @@ mountpoints:
     type: "markup"
     suffix: ".html"
   /api/:
-    url: "https://publish-p28003-e1277044.adobeaemcloud.com/bin/"
+    url: "https://publish-p28003-e1277044.adobeaemcloud.com/api/"
     type: "markup"
     suffix: ".html"

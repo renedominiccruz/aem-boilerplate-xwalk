@@ -59,10 +59,13 @@ export default function decorate(block) {
     if (isEditor) {
       return;
     }
-    const actionUrl = ' https://publish-p28003-e1277044.adobeaemcloud.com/bin/edgeMailchimp';
+    const actionUrl = 'https://publish-p28003-e1277044.adobeaemcloud.com/api/edgeMailchimp';
+    const formData = new FormData(form);
+
     try {
       const response = await fetch(actionUrl, {
-        method: 'GET',
+        method: 'POST',
+        body: formData,
       });
       if (response.ok) {
         statusMessage.textContent = 'Thank you! You are subscribed.';

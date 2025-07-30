@@ -59,7 +59,7 @@ export default function decorate(block) {
     if (isEditor) {
       return;
     }
-    const actionUrl = '/api/edgeMailchimp';
+    const actionUrl = 'https://publish-p28003-e1277044.adobeaemcloud.com/bin/edgeMailchimp';
     const formData = new FormData(form);
     try {
       // Call your AEM servlet endpoint instead of Mailchimp API directly

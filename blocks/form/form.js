@@ -59,12 +59,17 @@ export default function decorate(block) {
     if (isEditor) {
       return;
     }
-    const actionUrl = 'https://publish-p28003-e1277044.adobeaemcloud.com/bin/edgeMailchimp';
+    const actionUrl = 'http://localhost:4502/bin/edgeMailchimp';
     const formData = new FormData(form);
+    // Encode "admin:admin" for Basic Auth
+    const basicAuth = 'Basic ' + btoa('admin:admin');
+
     try {
-      // Call your AEM servlet endpoint instead of Mailchimp API directly
       const response = await fetch(actionUrl, {
         method: 'POST',
+        headers: {
+          'Authorization': basicAuth, // Add Basic Auth header
+        },
         body: formData,
       });
       if (response.ok) {

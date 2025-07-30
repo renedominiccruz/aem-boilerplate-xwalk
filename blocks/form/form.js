@@ -59,14 +59,14 @@ export default function decorate(block) {
     if (isEditor) {
       return;
     }
-    const actionUrl = 'https://publish-p28003-e1277044.adobeaemcloud.com/bin/edgeMailchimp';
-    const formData = new FormData(form);
+   
+    const actionUrl = ' https://publish-p28003-e1277044.adobeaemcloud.com/bin/edgeMailchimp';
     try {
-      // Call your AEM servlet endpoint instead of Mailchimp API directly
+      
       const response = await fetch(actionUrl, {
-        method: 'POST',
-        body: formData,
+        method: 'GET',
       });
+
       if (response.ok) {
         statusMessage.textContent = 'Thank you! You are subscribed.';
         statusMessage.classList.add('success');

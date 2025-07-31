@@ -59,7 +59,7 @@ export default function decorate(block) {
     if (isEditor) {
       return;
     }
-    const actionUrl = 'https://publish-p28003-e1277044.adobeaemcloud.com/api/edgeMailchimp';
+    const actionUrl = 'https://publish-p28003-e1277044.adobeaemcloud.com/bin/edgeMailchimp';
     const formData = new FormData(form);
 
     try {

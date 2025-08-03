@@ -26,14 +26,14 @@ export default function decorate(block) {
 
       // Label
       const label = document.createElement('label');
-      label.setAttribute('for', fieldName);
+      label.setAttribute('for', fieldName.toUpperCase());
       label.textContent = fieldName.charAt(0).toUpperCase() + fieldName.slice(1);
 
       // Input
       const input = document.createElement('input');
       input.type = fieldType;
-      input.name = fieldName;
-      input.id = fieldName;
+      input.name = fieldName.toUpperCase();
+      input.id = fieldName.toUpperCase();
 
       // Append label and input to wrapper
       fieldWrapper.appendChild(label);

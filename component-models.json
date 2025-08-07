@@ -270,8 +270,7 @@
       {
         "component": "aem-content",
         "name": "ctaLink",
-        "label": "CTA Link",
-        "valueType": "url"
+        "label": "CTA Link"
       }
     ]
   }

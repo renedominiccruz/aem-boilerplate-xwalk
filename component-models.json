@@ -263,14 +263,15 @@
       },
       {
         "component": "text",
-        "name": "ctaText",
-        "label": "CTA Label",
+        "name": "buttonText",
+        "label": "Button Label",
         "valueType": "string"
       },
       {
         "component": "aem-content",
-        "name": "ctaLink",
-        "label": "CTA Link"
+        "name": "buttonLink",
+        "label": "Button Link",
+        "valueType": "url"
       }
     ]
   }

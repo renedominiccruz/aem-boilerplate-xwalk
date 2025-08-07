@@ -250,24 +250,28 @@
     "id": "teaser",
     "fields": [
       {
-        "component": "text",
-        "name": "headline",
-        "label": "Headline Title"
-      },
-      {
-        "component": "text",
-        "name": "subhead",
-        "label": "Subtitle"
-      },
-      {
         "component": "image",
         "name": "image",
-        "label": "Image"
+        "label": "Image",
+        "valueType": "asset"
+      },
+      {
+        "component": "richtext",
+        "name": "textContent",
+        "label": "Text Content",
+        "valueType": "string"
       },
       {
         "component": "text",
-        "name": "link",
-        "label": "Link URL"
+        "name": "ctaText",
+        "label": "CTA Label",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "ctaLink",
+        "label": "CTA Link",
+        "valueType": "url"
       }
     ]
   }

@@ -46,5 +46,11 @@
     "components": [
       "formfields"
     ]
+  },
+  {
+    "id": "section",
+    "components": [
+      "teaser"
+    ]
   }
 ]

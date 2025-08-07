@@ -1,0 +1,45 @@
+{
+  "definitions": [
+    {
+      "title": "Teaser",
+      "id": "teaser",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "template": {
+              "model": "teaser"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "teaser",
+      "fields": [
+        {
+          "component": "text",
+          "name": "headline",
+          "label": "Headline Title"
+        },
+        {
+          "component": "text",
+          "name": "subhead",
+          "label": "Subtitle"
+        },
+        {
+          "component": "image",
+          "name": "image",
+          "label": "Image"
+        },
+        {
+          "component": "text",
+          "name": "link",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

@@ -30,17 +30,19 @@
           "component": "richtext",
           "name": "textContent",
           "label": "Text Content",
-          "valueType": "string"
+          "valueType": "string",
+          "value": ""
         },
         {
-          "component": "text",
-          "name": "buttonText",
-          "label": "Button Label",
-          "valueType": "string"
+        "component": "text",
+        "valueType": "string",
+        "name": "button_text",
+        "label": "Button Label",
+        "value": ""
         },
         {
           "component": "aem-content",
-          "name": "buttonLink",
+          "name": "button_link",
           "label": "Button Link",
           "valueType": "url"
         }

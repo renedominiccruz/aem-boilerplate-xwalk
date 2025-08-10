@@ -264,14 +264,14 @@
       },
       {
         "component": "text",
-        "name": "buttonText",
-        "label": "Button Label",
         "valueType": "string",
+        "name": "button_text",
+        "label": "Button Label",
         "value": ""
       },
       {
         "component": "aem-content",
-        "name": "buttonLink",
+        "name": "button_link",
         "label": "Button Link",
         "valueType": "url"
       }

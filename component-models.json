@@ -259,13 +259,15 @@
         "component": "richtext",
         "name": "textContent",
         "label": "Text Content",
-        "valueType": "string"
+        "valueType": "string",
+        "value": ""
       },
       {
         "component": "text",
         "name": "buttonText",
         "label": "Button Label",
-        "valueType": "string"
+        "valueType": "string",
+        "value": ""
       },
       {
         "component": "aem-content",

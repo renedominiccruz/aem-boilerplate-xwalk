@@ -250,10 +250,10 @@
     "id": "teaser",
     "fields": [
       {
-        "component": "image",
+        "component": "reference",
         "name": "image",
         "label": "Image",
-        "valueType": "asset"
+        "valueType": "string"
       },
       {
         "component": "richtext",

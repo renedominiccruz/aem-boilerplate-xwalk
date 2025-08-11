@@ -1,16 +1,13 @@
-# helix-query.yaml
 indices:
   pages:
-    # What to crawl from your published site
-    include:
-      - "/**"          # index everything (tighten later)
-    exclude:
-      - "/drafts/**"
-      - "/**.json"     # avoid json assets
-    # Where the raw index lives (auto-managed). Name can be anything.
     target: /pages.xlsx
     sheet: default
-    # Columns available at /pages.json (or /query-index.json if you keep "pages" as "default")
+    include:
+      - "/**"
+    exclude:
+      - "/drafts/**"
+      - "/**/*.json"
+      - "/pages.xlsx"
     columns:
       - name: path
         value: path
@@ -18,7 +15,9 @@ indices:
         value: title
       - name: lastModified
         value: lastModified
+      - name: robots
+        value: robots
       - name: image
-        value: "meta.image || properties.image || ''"
+        value: "properties.image || meta.image || ''"
       - name: description
-        value: "meta.description || properties.description || ''"
+        value: "properties.description || meta.description || ''"

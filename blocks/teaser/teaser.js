@@ -1,8 +1,7 @@
 export default function decorate(block) {
-  const [headline, subhead, image, link] = block.children;
-
+  const [image, headline, subhead, link] = block.children;
+  if (image) image.classList.add('teaser-image');
   if (headline) headline.classList.add('teaser-headline');
   if (subhead) subhead.classList.add('teaser-subhead');
-  if (image) image.classList.add('teaser-image');
   if (link) link.classList.add('teaser-link');
 }

@@ -17,16 +17,16 @@ indices:
       # --- Teaser fields (arrays; supports multiple teasers per page) ---
       teaserImages:
         select: main .teaser > div:nth-of-type(1) img
-        values: attribute(el, 'src')
+        values: attribute(el, "src")
       teaserTitles:
         select: main .teaser > div:nth-of-type(2) > div
-        values: textContent(el)
+        values: attribute(el, "content")
       teaserCtaLabels:
         select: main .teaser > div:nth-of-type(3) > div > p:first-child
-        values: textContent(el)
+        values: attribute(el, "content")
       teaserCtaHrefs:
         select: main .teaser > div:nth-of-type(3) a[href]
-        values: attribute(el, 'href')
+        values: attribute(el, "href")
     columns:
       - name: path
         value: path

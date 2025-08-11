@@ -1,23 +1,16 @@
+version: 1
+
 indices:
   pages:
-    target: /pages.xlsx
-    sheet: default
     include:
-      - "/**"
+      - '/**'
     exclude:
-      - "/drafts/**"
-      - "/**/*.json"
-      - "/pages.xlsx"
-    columns:
-      - name: path
-        value: path
-      - name: title
-        value: title
-      - name: lastModified
-        value: lastModified
-      - name: robots
-        value: robots
-      - name: image
-        value: "properties.image || meta.image || ''"
-      - name: description
-        value: "properties.description || meta.description || ''"
+      - '/**.json'
+    target: /query-index.json
+    properties:
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
+      robots:
+        select: head > meta[name="robots"]
+        value: attribute(el, "content")

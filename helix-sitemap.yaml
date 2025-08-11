@@ -1,5 +1,5 @@
 sitemaps:
   default:
-    source: /pages.json
+    source: /query-index.json
     destination: /sitemap.xml
     lastmod: YYYY-MM-DD

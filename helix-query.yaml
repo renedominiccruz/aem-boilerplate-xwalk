@@ -14,12 +14,14 @@ indices:
       robots:
         select: head > meta[name="robots"]
         value: attribute(el, "content")
-      blocksByData:
-            select: '[data-block-name]'
-            values: attribute(el, 'data-block-name')
-      blockNameFromClass:
-        select: '[class~="block"]'
-        values: match(attribute(el, 'class'), '([\\w-]+)\\s+block\\b')
+      # If server HTML has wrappers like <div class="hero-wrapper">…
+      blockNamesFromWrapper:
+        select: '[class$="-wrapper"]'
+        values: match(attribute(el, 'class'), '(\\b[\\w-]+)-wrapper\\b')
+      # If it has containers like <div class="cards-container">…
+      blockNamesFromContainer:
+        select: '[class$="-container"]'
+        values: match(attribute(el, 'class'), '(\\b[\\w-]+)-container\\b')
     columns:
       - name: path
         value: path
@@ -29,10 +31,10 @@ indices:
         value: lastModified
       - name: robots
         value: robots
-      - name: blockNamesData
-        value: blocksByData
-      - name: blockNamesClass
-        value: blockNameFromClass  
+      - name: blockNamesFromWrapper
+        value: blockNamesFromWrapper
+      - name: blockNamesFromContainer
+        value: blockNamesFromContainer  
       - name: image
         value: "properties.image || meta.image || ''"
       - name: description

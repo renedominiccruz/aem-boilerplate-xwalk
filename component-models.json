@@ -161,6 +161,17 @@
     ]
   },
   {
+    "id": "children-list",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "parentPage",
+        "label": "Parent Page",
+        "valueType": "resource"
+      }
+    ]
+  },
+  {
     "id": "columns",
     "fields": [
       {

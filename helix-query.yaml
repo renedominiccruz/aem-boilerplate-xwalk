@@ -1,16 +1,24 @@
-version: 1
-
+# helix-query.yaml
 indices:
   pages:
+    # What to crawl from your published site
     include:
-      - '/**'
+      - "/**"          # index everything (tighten later)
     exclude:
-      - '/**.json'
-    target: /query-index.json
-    properties:
-      lastModified:
-        select: none
-        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
-      robots:
-        select: head > meta[name="robots"]
-        value: attribute(el, "content")
+      - "/drafts/**"
+      - "/**.json"     # avoid json assets
+    # Where the raw index lives (auto-managed). Name can be anything.
+    target: /pages.xlsx
+    sheet: default
+    # Columns available at /pages.json (or /query-index.json if you keep "pages" as "default")
+    columns:
+      - name: path
+        value: path
+      - name: title
+        value: title
+      - name: lastModified
+        value: lastModified
+      - name: image
+        value: "meta.image || properties.image || ''"
+      - name: description
+        value: "meta.description || properties.description || ''"

@@ -14,14 +14,22 @@ indices:
       robots:
         select: head > meta[name="robots"]
         value: attribute(el, "content")
-      # If server HTML has wrappers like <div class="hero-wrapper">…
-      blockNamesFromWrapper:
-        select: '[class$="-wrapper"]'
-        values: match(attribute(el, 'class'), '(\\b[\\w-]+)-wrapper\\b')
-      # If it has containers like <div class="cards-container">…
-      blockNamesFromContainer:
-        select: '[class$="-container"]'
-        values: match(attribute(el, 'class'), '(\\b[\\w-]+)-container\\b')
+      # Does the page have at least one teaser?
+      teaserHits:
+        select: 'main .teaser'
+        values: attribute(el, 'class')   # non-empty array => teaser present
+      # First teaser's headline text
+      teaserTitle:
+        select: 'main .teaser > div:nth-of-type(2) > div'
+        value: textContent(el)
+      # First teaser's CTA label (your snippet puts it in the first <p>)
+      teaserCtaLabel:
+        select: 'main .teaser > div:nth-of-type(3) > div > p:first-child'
+        value: textContent(el)
+      # First teaser's CTA href
+      teaserCtaHref:
+        select: 'main .teaser > div:nth-of-type(3) a[href]'
+        value: attribute(el, 'href')
     columns:
       - name: path
         value: path
@@ -31,10 +39,15 @@ indices:
         value: lastModified
       - name: robots
         value: robots
-      - name: blockNamesFromWrapper
-        value: blockNamesFromWrapper
-      - name: blockNamesFromContainer
-        value: blockNamesFromContainer  
+      # Teaser columns
+      - name: teaser
+        value: teaserHits
+      - name: teaserTitle
+        value: teaserTitle
+      - name: teaserCtaLabel
+        value: teaserCtaLabel
+      - name: teaserCtaHref
+        value: teaserCtaHref
       - name: image
         value: "properties.image || meta.image || ''"
       - name: description

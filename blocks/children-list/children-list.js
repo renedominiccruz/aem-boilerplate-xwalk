@@ -17,7 +17,7 @@ export default async function decorate(block) {
 
     const children = data.filter((row) => {
       const p = row.path;
-      if (!p || !p.startsWith(parentPath + '/')) return false;
+      if (!p || !p.startsWith(`${parentPath}/`)) return false; // template literal instead of concatenation
       const depth = p.split('/').filter(Boolean).length;
       return depth === parentDepth + 1;
     });
@@ -36,7 +36,6 @@ export default async function decorate(block) {
     block.innerHTML = '';
     block.appendChild(ul);
   } catch (e) {
-    console.error(e);
     block.textContent = 'Error loading child pages.';
   }
 }

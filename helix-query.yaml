@@ -17,18 +17,18 @@ indices:
       blocks:
         select: div.block
         values: attribute(el, "class")
-      columns:
-        - name: path
-          value: path
-        - name: title
-          value: title
-        - name: lastModified
-          value: lastModified
-        - name: robots
-          value: robots
-        - name: blocks
-          value: blocks    
-        - name: image
-          value: "properties.image || meta.image || ''"
-        - name: description
-          value: "properties.description || meta.description || ''"
+    columns:
+      - name: path
+        value: path
+      - name: title
+        value: title
+      - name: lastModified
+        value: lastModified
+      - name: robots
+        value: robots
+      - name: blocks
+        value: blocks    
+      - name: image
+        value: "properties.image || meta.image || ''"
+      - name: description
+        value: "properties.description || meta.description || ''"

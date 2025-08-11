@@ -1,12 +1,12 @@
 version: 1
-
 indices:
   pages:
     include:
-      - '/**'
+      - "/**"
     exclude:
-      - '/**.json'
+      - "/**/*.json"
     target: /query-index.json
+
     properties:
       lastModified:
         select: none
@@ -14,22 +14,19 @@ indices:
       robots:
         select: head > meta[name="robots"]
         value: attribute(el, "content")
-      # Does the page have at least one teaser?
-      teaserHits:
-        select: 'main .teaser'
-        values: attribute(el, 'class')   # non-empty array => teaser present
-      # First teaser's headline text
-      teaserTitle:
+      # --- Teaser fields (arrays; supports multiple teasers per page) ---
+      teaserImages:
+        select: 'main .teaser > div:nth-of-type(1) img'
+        values: attribute(el, 'src')
+      teaserTitles:
         select: 'main .teaser > div:nth-of-type(2) > div'
-        value: textContent(el)
-      # First teaser's CTA label (your snippet puts it in the first <p>)
-      teaserCtaLabel:
+        values: textContent(el)
+      teaserCtaLabels:
         select: 'main .teaser > div:nth-of-type(3) > div > p:first-child'
-        value: textContent(el)
-      # First teaser's CTA href
-      teaserCtaHref:
+        values: textContent(el)
+      teaserCtaHrefs:
         select: 'main .teaser > div:nth-of-type(3) a[href]'
-        value: attribute(el, 'href')
+        values: attribute(el, 'href')
     columns:
       - name: path
         value: path
@@ -39,16 +36,11 @@ indices:
         value: lastModified
       - name: robots
         value: robots
-      # Teaser columns
-      - name: teaser
-        value: teaserHits
-      - name: teaserTitle
-        value: teaserTitle
-      - name: teaserCtaLabel
-        value: teaserCtaLabel
-      - name: teaserCtaHref
-        value: teaserCtaHref
-      - name: image
-        value: "properties.image || meta.image || ''"
-      - name: description
-        value: "properties.description || meta.description || ''"
+      - name: teaserImages
+        value: teaserImages
+      - name: teaserTitles
+        value: teaserTitles
+      - name: teaserCtaLabels
+        value: teaserCtaLabels
+      - name: teaserCtaHrefs
+        value: teaserCtaHrefs

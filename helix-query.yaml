@@ -14,9 +14,12 @@ indices:
       robots:
         select: head > meta[name="robots"]
         value: attribute(el, "content")
-      blocks:
-        select: div.block
-        values: attribute(el, "class")
+      blocksByData:
+            select: '[data-block-name]'
+            values: attribute(el, 'data-block-name')
+      blockNameFromClass:
+        select: '[class~="block"]'
+        values: match(attribute(el, 'class'), '([\\w-]+)\\s+block\\b')
     columns:
       - name: path
         value: path
@@ -26,8 +29,10 @@ indices:
         value: lastModified
       - name: robots
         value: robots
-      - name: blocks
-        value: blocks    
+      - name: blockNamesData
+        value: blocksByData
+      - name: blockNamesClass
+        value: blockNameFromClass  
       - name: image
         value: "properties.image || meta.image || ''"
       - name: description
